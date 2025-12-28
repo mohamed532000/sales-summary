@@ -1,6 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  compress : true,
+  compiler: {
+      removeConsole: process.env.NODE_ENV === 'production',
+      styledComponents : true
+  },
+  images : {
+      remotePatterns : [
+          {
+              protocol : "https",
+              hostname : "*"
+          }
+      ]
+  }
 };
 
 export default nextConfig;
