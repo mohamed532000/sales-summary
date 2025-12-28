@@ -12,7 +12,7 @@ function CategoriesFilteration({mainCategoriesSalesData}) {
     }
     return (
         <div className='relative flex gap-3'>
-            <RadioGroup value={mainCategoryData} className={"flex py-2"} onValueChange={(value) => {
+            <RadioGroup value={mainCategoryData} className={"flex justify-center md:justify-start py-2 flex-wrap"} onValueChange={(value) => {
                 handleSetMainCategoryData(value)
                 console.log(value)
             }}>
