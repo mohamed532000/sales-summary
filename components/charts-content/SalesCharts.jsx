@@ -20,7 +20,7 @@ function SalesCharts({mainCategoriesSalesData}) {
     useEffect(() => {
         const getSUbCategoriesRevnue = async () => {
             const categoryId = mainCategoryData?.id
-            const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/sub_categories_sales${categoryId ? `?categoryId=${categoryId}` : ""}`);
+            const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/sub_categories_sales${categoryId ? `?categoryId=${categoryId}` : ""}`);
             setSubCategoriesRevinueData(res.data)
             setSubCategoryData(res.data[0])
         }
@@ -28,7 +28,7 @@ function SalesCharts({mainCategoriesSalesData}) {
     },[mainCategoryData])
     useEffect(() => {
         const getProducts = async () => {
-            const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/products?categoryId=${mainCategoryData?.id}&subCategoryId=${subCategoryData?.id}`)
+            const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products?categoryId=${mainCategoryData?.id}&subCategoryId=${subCategoryData?.id}`)
             setProductsSalesInfo(res.data)
         }
         getProducts()
